@@ -337,7 +337,7 @@ public class Logic {
     System.out.println("=== All Customer Orders ===");
 
     boolean hasOrders = false;
-    int grandTotal = 0; // To track the total price of all users
+    int grandTotal = 0; 
 
     for (User user : userList) {
         if (!user.getOrderedList().isEmpty()) {
@@ -345,18 +345,18 @@ public class Logic {
             
             System.out.println("Orders for user: " + user.getUsername());
             
-            int userTotalPrice = 0; // Reset for each user
+            int userTotalPrice = 0; 
             for (Order order : user.getOrderedList()) {
                 System.out.println("- " + order.getName() + " | Table: " + order.getTableNumber() + " | Price: " + order.getPrice());
                 
-                // Calculate totals
+                
                 userTotalPrice += order.getPrice();
             }
             
             System.out.println("Total Price for " + user.getUsername() + ": " + userTotalPrice);
             System.out.println("----------------------------");
 
-            // Add user's total to grand total
+            
             grandTotal += userTotalPrice;
         }
     }
